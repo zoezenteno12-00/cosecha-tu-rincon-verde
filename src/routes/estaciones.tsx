@@ -25,7 +25,7 @@ const estaciones: { n: string; ciclo: Ciclo; icon: string }[] = [
 
 function Estaciones() {
   const [sel, setSel] = useState(0);
-  const e = estaciones[sel];
+  const e = estaciones[sel] ?? estaciones[0]!;
   const propias = plantas.filter((p) => p.ciclo === e.ciclo);
   const todoAno = plantas.filter((p) => p.ciclo === "Todo el año");
 
