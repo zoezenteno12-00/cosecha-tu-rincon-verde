@@ -10,33 +10,91 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EstacionesRouteImport } from './routes/estaciones'
+import { Route as FuentesRouteImport } from './routes/fuentes'
+import { Route as MaterialesRouteImport } from './routes/materiales'
+import { Route as PlantasRouteImport } from './routes/plantas'
+import { Route as TipsRouteImport } from './routes/tips'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EstacionesRoute = EstacionesRouteImport.update({
+  id: '/estaciones',
+  path: '/estaciones',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FuentesRoute = FuentesRouteImport.update({
+  id: '/fuentes',
+  path: '/fuentes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaterialesRoute = MaterialesRouteImport.update({
+  id: '/materiales',
+  path: '/materiales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlantasRoute = PlantasRouteImport.update({
+  id: '/plantas',
+  path: '/plantas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TipsRoute = TipsRouteImport.update({
+  id: '/tips',
+  path: '/tips',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/estaciones': typeof EstacionesRoute
+  '/fuentes': typeof FuentesRoute
+  '/materiales': typeof MaterialesRoute
+  '/plantas': typeof PlantasRoute
+  '/tips': typeof TipsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/estaciones': typeof EstacionesRoute
+  '/fuentes': typeof FuentesRoute
+  '/materiales': typeof MaterialesRoute
+  '/plantas': typeof PlantasRoute
+  '/tips': typeof TipsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/estaciones': typeof EstacionesRoute
+  '/fuentes': typeof FuentesRoute
+  '/materiales': typeof MaterialesRoute
+  '/plantas': typeof PlantasRoute
+  '/tips': typeof TipsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/estaciones' | '/fuentes' | '/materiales' | '/plantas' | '/tips'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/estaciones' | '/fuentes' | '/materiales' | '/plantas' | '/tips'
+  id:
+    | '__root__'
+    | '/'
+    | '/estaciones'
+    | '/fuentes'
+    | '/materiales'
+    | '/plantas'
+    | '/tips'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EstacionesRoute: typeof EstacionesRoute
+  FuentesRoute: typeof FuentesRoute
+  MaterialesRoute: typeof MaterialesRoute
+  PlantasRoute: typeof PlantasRoute
+  TipsRoute: typeof TipsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +106,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/estaciones': {
+      id: '/estaciones'
+      path: '/estaciones'
+      fullPath: '/estaciones'
+      preLoaderRoute: typeof EstacionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fuentes': {
+      id: '/fuentes'
+      path: '/fuentes'
+      fullPath: '/fuentes'
+      preLoaderRoute: typeof FuentesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/materiales': {
+      id: '/materiales'
+      path: '/materiales'
+      fullPath: '/materiales'
+      preLoaderRoute: typeof MaterialesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plantas': {
+      id: '/plantas'
+      path: '/plantas'
+      fullPath: '/plantas'
+      preLoaderRoute: typeof PlantasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tips': {
+      id: '/tips'
+      path: '/tips'
+      fullPath: '/tips'
+      preLoaderRoute: typeof TipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EstacionesRoute: EstacionesRoute,
+  FuentesRoute: FuentesRoute,
+  MaterialesRoute: MaterialesRoute,
+  PlantasRoute: PlantasRoute,
+  TipsRoute: TipsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
