@@ -10,7 +10,7 @@ Esta es la maquetación de un sitio web que quiero diseñar para que los usuario
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://cosecha-tu-rincon-verde.lovable.app
+**Live app**: https://preview--cosecha-tu-rincon-verde.lovable.app/
 
 ## Build with Lovable
 
