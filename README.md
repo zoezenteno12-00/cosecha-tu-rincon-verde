@@ -7,6 +7,9 @@ Maquetación realizada en Canva con ayuda de ChatGPT.
 PROMPT empleado para construirla en Lovable: 
 Esta es la maquetación de un sitio web que quiero diseñar para que los usuarios comiencen un huerto casero por su cuenta. Quiero que acúes como un diseñador UX/UI cosntruyas un sitio web, sugieras imágenes y cambios en la paleta de color, tipografía, orden y distribución de los elementos para que sea interactiva y fácil de usar. Además quiero que incluyas imágenes referentes a huertos que hagan más atractivo el sitio, quiero que incluyas una sección en donde se incluyan las fuentes de la información. La información que rellenará el sitio es relacionada a huertos, plantas,, materiales y mejores momentos para cultivar cada planta. Quiero que los botones para dirigir al usuario a las diferentes secciones sean visibles y fáciles de usar. Evita inventar información si no encuentras de talles al respecto.
 
+PROMPT para añadir un formulario interactivo: 
+Quiero que añadas un elemento interactivo para los usuarios, que ellos rellenen un formulario relacionado a intereses, recursos y espacio con los que cuentes para que se les de un plan ajustado a sus necesidades y posibilidades para empezar su huerto
+
 
 This project was built with [Lovable](https://lovable.dev).
 
