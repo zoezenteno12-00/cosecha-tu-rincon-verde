@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as EstacionesRouteImport } from './routes/estaciones'
 import { Route as FuentesRouteImport } from './routes/fuentes'
 import { Route as MaterialesRouteImport } from './routes/materiales'
+import { Route as MiPlanRouteImport } from './routes/mi-plan'
 import { Route as PlantasRouteImport } from './routes/plantas'
 import { Route as TipsRouteImport } from './routes/tips'
 
@@ -36,6 +37,11 @@ const MaterialesRoute = MaterialesRouteImport.update({
   path: '/materiales',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MiPlanRoute = MiPlanRouteImport.update({
+  id: '/mi-plan',
+  path: '/mi-plan',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlantasRoute = PlantasRouteImport.update({
   id: '/plantas',
   path: '/plantas',
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/estaciones': typeof EstacionesRoute
   '/fuentes': typeof FuentesRoute
   '/materiales': typeof MaterialesRoute
+  '/mi-plan': typeof MiPlanRoute
   '/plantas': typeof PlantasRoute
   '/tips': typeof TipsRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/estaciones': typeof EstacionesRoute
   '/fuentes': typeof FuentesRoute
   '/materiales': typeof MaterialesRoute
+  '/mi-plan': typeof MiPlanRoute
   '/plantas': typeof PlantasRoute
   '/tips': typeof TipsRoute
 }
@@ -69,21 +77,36 @@ export interface FileRoutesById {
   '/estaciones': typeof EstacionesRoute
   '/fuentes': typeof FuentesRoute
   '/materiales': typeof MaterialesRoute
+  '/mi-plan': typeof MiPlanRoute
   '/plantas': typeof PlantasRoute
   '/tips': typeof TipsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/estaciones' | '/fuentes' | '/materiales' | '/plantas' | '/tips'
+    | '/'
+    | '/estaciones'
+    | '/fuentes'
+    | '/materiales'
+    | '/mi-plan'
+    | '/plantas'
+    | '/tips'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/estaciones' | '/fuentes' | '/materiales' | '/plantas' | '/tips'
+  to:
+    | '/'
+    | '/estaciones'
+    | '/fuentes'
+    | '/materiales'
+    | '/mi-plan'
+    | '/plantas'
+    | '/tips'
   id:
     | '__root__'
     | '/'
     | '/estaciones'
     | '/fuentes'
     | '/materiales'
+    | '/mi-plan'
     | '/plantas'
     | '/tips'
   fileRoutesById: FileRoutesById
@@ -93,6 +116,7 @@ export interface RootRouteChildren {
   EstacionesRoute: typeof EstacionesRoute
   FuentesRoute: typeof FuentesRoute
   MaterialesRoute: typeof MaterialesRoute
+  MiPlanRoute: typeof MiPlanRoute
   PlantasRoute: typeof PlantasRoute
   TipsRoute: typeof TipsRoute
 }
@@ -127,6 +151,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MaterialesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mi-plan': {
+      id: '/mi-plan'
+      path: '/mi-plan'
+      fullPath: '/mi-plan'
+      preLoaderRoute: typeof MiPlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/plantas': {
       id: '/plantas'
       path: '/plantas'
@@ -149,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   EstacionesRoute: EstacionesRoute,
   FuentesRoute: FuentesRoute,
   MaterialesRoute: MaterialesRoute,
+  MiPlanRoute: MiPlanRoute,
   PlantasRoute: PlantasRoute,
   TipsRoute: TipsRoute,
 }

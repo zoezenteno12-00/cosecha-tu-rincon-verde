@@ -7,6 +7,7 @@ export const secciones = [
   { to: "/estaciones", label: "Estaciones", hint: "Cuándo sembrar" },
   { to: "/tips", label: "Tips", hint: "Cuidados" },
   { to: "/fuentes", label: "Fuentes", hint: "De dónde viene la info" },
+  { to: "/mi-plan", label: "Mi plan", hint: "Plan personalizado" },
 ] as const;
 
 export function SiteNav() {
