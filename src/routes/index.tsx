@@ -39,7 +39,10 @@ function Index() {
               </Link>
             ))}
           </div>
-        </div>
+          </div>
+          <Link to="/mi-plan" className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-leaf px-8 py-4 text-lg font-semibold uppercase tracking-wider text-leaf-foreground shadow-lg transition hover:opacity-90 sm:w-auto">
+            🌱 Arma tu plan personalizado
+          </Link>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14">
