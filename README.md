@@ -14,7 +14,7 @@ This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/3933fe48-326a-40f7-9017-f4ac10933e28).
+Continue developing this project in the [Lovable editor]([https://lovable.dev/projects/3933fe48-326a-40f7-9017-f4ac10933e28](https://preview--cosecha-tu-rincon-verde.lovable.app/)).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
 - **Stay in sync**: every change made in Lovable is committed straight to this repository.
